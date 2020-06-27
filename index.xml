@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Álvaro A. Gutiérrez Vargas</title>
+    <link>/</link>
+    <description>Recent content on Álvaro A. Gutiérrez Vargas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Oto-2019] Introducción a la Estadística</title>
+      <link>/teaching/oto-2019-introducci%C3%B3n-a-la-estad%C3%ADstica/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/oto-2019-introducci%C3%B3n-a-la-estad%C3%ADstica/</guid>
+      <description>Notas del curso de pregrado Introducción a la Estadística, Facultad Economía y Negocios, Universidad de Chile.
+Estadística Descriptiva
+Notas Slides Propuesto 1 Propuesto 2
+Teoría de Probabilidades &amp;amp; Conjuntos
+Notas Ejericio Resuelto
+Funciones de Distribución
+Notas Ejercicio Resuelto</description>
+    </item>
+    
+    <item>
+      <title>Are my labels there? Searching among label values on Stata</title>
+      <link>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</guid>
+      <description> This brief post answer the question my orignal google search How to cheack if a value is contained into a variable on stata?
+sysuse auto, clear gen var = 0  </description>
+    </item>
+    
+    <item>
+      <title>[Oto-2019]: StataLaTeX Combo</title>
+      <link>/teaching/statalatexcombo/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/statalatexcombo/</guid>
+      <description>Este es un compedio del material impartido en el Taller Stata &amp;amp; LaTeX a los alumnos del curso de Econometría Financiera del Master de Finanzas de la Universidad de Chile.
+S01: Introduccion a LaTeX Enunciado
+ S02: Estadística Descriptiva Enunciado Solución Data
+ S03: Manejo de Bases de Datos Enunciado Solución Data
+ S04: Trabajo con Multi-bases de Datos Enunciado Solución Data
+ S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1 Enunciado Solución Data</description>
+    </item>
+    
+    <item>
+      <title>CV</title>
+      <link>/cv/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/cv/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>Research</title>
+      <link>/research/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/research/</guid>
+      <description>I have some Working papers.
+  Is the Effect of Personality Traits on Academic Performance Influenced by Type of Tests and Study-Time Constraints?.(With Pablo Tapia and Renato Aguilar) The Big Five Traits and the Home Mortgage Delinquencies (with Pablo Tapia and Jose Luis Ruiz)   Conferences.
+  Sechi 2017, Satiago Chile. : Responsabilidad, Extroversión y Desempeño Académico frente Evaluaciones con Distinta Modalidad     Stata Meeting 2020, Bern, Switzerland.</description>
+    </item>
+    
+    <item>
+      <title>[Pri-2019] [Grad]  BI para las Finanzas</title>
+      <link>/teaching/2020-01-01-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/2020-01-01-python/</guid>
+      <description>Descripción del Curso    Acá podrás encontrar las ayudantías computacionales del curso Business Intelligence para las Finanzas dictado al programa de Magister en Finanzas en la Universidad de Chile. Las clases van desde tópicos sencillos, como manejo de bases de datos mediante Pandas, hasta desarrollo de algotirmos complejos como Redes Neuronales con Scikit-Learn.    Sesión #1: Numpy (Numerical Python)    En esta sesión aprenderemos cómo ejecutar operaciones básicas del Álgebra Lineal, haciendo uso de la librería Numpy.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>If you navigated up to here means that you deliverately wanted to know more about me. I don&amp;rsquo;t really know what to say. I am just a learner enthusiast. Currently I am in Belgium working to get PhD in the field of Discrete Choice Modelling. I like computers and I survive exclusively out of plants.</description>
+    </item>
+    
+  </channel>
+</rss>

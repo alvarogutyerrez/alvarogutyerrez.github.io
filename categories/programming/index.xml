@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Álvaro A. Gutiérrez Vargas</title>
+    <link>/categories/programming/</link>
+    <description>Recent content in Programming on Álvaro A. Gutiérrez Vargas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Are my labels there? Searching among label values on Stata</title>
+      <link>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</guid>
+      <description> This brief post answer the question my orignal google search How to cheack if a value is contained into a variable on stata?
+sysuse auto, clear gen var = 0  </description>
+    </item>
+    
+    <item>
+      <title>[Oto-2019]: StataLaTeX Combo</title>
+      <link>/teaching/statalatexcombo/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/statalatexcombo/</guid>
+      <description>Este es un compedio del material impartido en el Taller Stata &amp;amp; LaTeX a los alumnos del curso de Econometría Financiera del Master de Finanzas de la Universidad de Chile.
+S01: Introduccion a LaTeX Enunciado
+ S02: Estadística Descriptiva Enunciado Solución Data
+ S03: Manejo de Bases de Datos Enunciado Solución Data
+ S04: Trabajo con Multi-bases de Datos Enunciado Solución Data
+ S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1 Enunciado Solución Data</description>
+    </item>
+    
+  </channel>
+</rss>

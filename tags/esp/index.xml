@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESP on Álvaro A. Gutiérrez Vargas</title>
+    <link>/tags/esp/</link>
+    <description>Recent content in ESP on Álvaro A. Gutiérrez Vargas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/esp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Oto-2019] Introducción a la Estadística</title>
+      <link>/teaching/oto-2019-introducci%C3%B3n-a-la-estad%C3%ADstica/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/oto-2019-introducci%C3%B3n-a-la-estad%C3%ADstica/</guid>
+      <description>Notas del curso de pregrado Introducción a la Estadística, Facultad Economía y Negocios, Universidad de Chile.
+Estadística Descriptiva
+Notas Slides Propuesto 1 Propuesto 2
+Teoría de Probabilidades &amp;amp; Conjuntos
+Notas Ejericio Resuelto
+Funciones de Distribución
+Notas Ejercicio Resuelto</description>
+    </item>
+    
+    <item>
+      <title>[Oto-2019]: StataLaTeX Combo</title>
+      <link>/teaching/statalatexcombo/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/statalatexcombo/</guid>
+      <description>Este es un compedio del material impartido en el Taller Stata &amp;amp; LaTeX a los alumnos del curso de Econometría Financiera del Master de Finanzas de la Universidad de Chile.
+S01: Introduccion a LaTeX Enunciado
+ S02: Estadística Descriptiva Enunciado Solución Data
+ S03: Manejo de Bases de Datos Enunciado Solución Data
+ S04: Trabajo con Multi-bases de Datos Enunciado Solución Data
+ S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1 Enunciado Solución Data</description>
+    </item>
+    
+    <item>
+      <title>[Pri-2019] [Grad]  BI para las Finanzas</title>
+      <link>/teaching/2020-01-01-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/2020-01-01-python/</guid>
+      <description>Descripción del Curso    Acá podrás encontrar las ayudantías computacionales del curso Business Intelligence para las Finanzas dictado al programa de Magister en Finanzas en la Universidad de Chile. Las clases van desde tópicos sencillos, como manejo de bases de datos mediante Pandas, hasta desarrollo de algotirmos complejos como Redes Neuronales con Scikit-Learn.    Sesión #1: Numpy (Numerical Python)    En esta sesión aprenderemos cómo ejecutar operaciones básicas del Álgebra Lineal, haciendo uso de la librería Numpy.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Alvaro Corp</title>
+    <link>/tags/programming/</link>
+    <description>Recent content in Programming on Alvaro Corp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Oto-2019]: StataLaTeX Combo</title>
+      <link>/teaching/statalatexcombo/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/statalatexcombo/</guid>
+      <description> S01: Introduccion a LaTeX Enunciado
+ S02: Estadística Descriptiva Enunciado Solución Data
+ S03: Manejo de Bases de Datos Enunciado Solución Data
+ S04: Trabajo con Multi-bases de Datos Enunciado Solución Data
+ S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1 Enunciado Solución Data
+ S06: Loops &amp;amp; Macros &amp;amp; Automatización Season 2 Enunciado Solución Data
+ S07: Presentación de Modelos Enunciado Solución Data
+ </description>
+    </item>
+    
+  </channel>
+</rss>
