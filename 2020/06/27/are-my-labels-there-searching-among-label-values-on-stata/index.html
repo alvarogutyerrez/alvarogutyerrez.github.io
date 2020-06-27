@@ -55,10 +55,98 @@
 				
 
 
+<div id="the-problem" class="section level1">
+<h1>The problem</h1>
 <p>This brief post answer the question my orignal google search <em>How to cheack if a value is contained into a variable on stata?</em></p>
-<pre><code>sysuse auto, clear
-gen var = 0 
+<p>Imagine we have a problem where we need to check if a string is contained into the labels of another variable. Let’s start with a minimal example using sysuse auto and the variable foreing which is the only one with labels already in place.</p>
+<pre><code>clear all
+sysuse auto, clear
+tab foreign 
+tab foreign ,nola
+
+   Car type |      Freq.     Percent        Cum.
+------------+-----------------------------------
+   Domestic |         52       70.27       70.27
+    Foreign |         22       29.73      100.00
+------------+-----------------------------------
+      Total |         74      100.00</code></pre>
+</div>
+<div id="the-solution" class="section level1">
+<h1>The solution</h1>
+<p>The simple answer to the question is contained in the following lines. For example, if we search for an existing label like <em>Domestic</em>. We can see that 52 observations present such a label.</p>
+<pre><code>sum foreign if foreign ==&quot;Domestic&quot;:`: value label foreign&#39; 
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     foreign |         52           0           0          0          0</code></pre>
+<p>However, if we seach for a label that is not present we obtain the following.</p>
+<pre><code>sum foreign if foreign ==&quot;Borges&quot;:`: value label foreign&#39; 
+(value label dereference &quot;Borges&quot;:origin not found)
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     foreign |          0</code></pre>
+<p>Up to here the question is already answered. I was just a combination of summarize and a fancy way to search among labels.</p>
+</div>
+<div id="the-explanation" class="section level1">
+<h1>The explanation</h1>
+<p>Well, let’s start beaking down the syntax used above, in small pieces. Take a look on the following lines. Fist, <code>label list</code> will list all the existent labels, where the only existent one is called <code>origin</code>. Therefore, when we repeate the summarize operation replacing `<code>: value label foreign'</code> by <code>origin</code> we, indeed, obtain the same results, meaning that learn that the the expression among quotes is no more than a way to call the name of the label attached to the variable <code>foreign</code>. To know more about such expressions that calculates results on the fly <a href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X0800800113">N.Cox 2008</a></p>
+<pre><code>label list
+origin:
+           0 Domestic
+           1 Foreign
+
+. sum foreign  if foreign ==&quot;Domestic&quot;:origin
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+     foreign |         52           0           0          0          0
 </code></pre>
+</div>
+<div id="the-fancy-solution" class="section level1">
+<h1>The fancy solution</h1>
+<p>Now let’s write a <code>program</code> that can check the existence of a string among the labels of a variable for us. We will use a combination of <code>summarize</code>, <code>capture</code> and <code>confirm</code>.</p>
+<p>The following program (<code>check_labels</code>) will check if the string that we type on the option <code>, label()</code> is present or not in the labels of a variable.</p>
+<p><code>syntax varlist(max=1) [if] , label(string)</code> is declaring that the program will just allows one variable and one <em>mandatory</em> option called <code>label()</code> that is going to be read as a string by the program.</p>
+<p>After, we use <code>quietly sum</code> calling the options from <code>syntax</code> in the same fashion as the first example, and adding the option <code>,nomean</code> to speed up the process because it won’t compute the variance (probably a better name could be <code>novariance</code> tho).</p>
+<p>Finally, we use <code>confirm</code> to check if the value was or nor present into the label. We will get a <code>7</code> when it’s not present and a <code>0</code> when the label is actually present storage in <code>_rc</code>. See <a href="https://www.stata.com/manuals13/pconfirm.pdf">help confirm</a>. After we can storage into a scalar called <code>present</code> a value of 1 when the the string was present and 0 if it wasn’t.</p>
+<pre><code>capture drop program check_labels
+
+program define check_labels ,rclass
+    version 12.0
+    syntax varlist(max=1) [if] , label(string)              
+
+    quietly sum `varlist&#39; if  `varlist&#39; == &quot;`label&#39;&quot;: `: value label `varlist&#39;&#39; ,nomean
+    
+    local mean_altern = r(mean)
+    capture confirm number `mean_altern&#39;
+    if _rc ==7 {
+        di in red &quot; `label&#39; isn&#39;t present on labels of var `varlist&#39; &quot;
+        return scalar present = 0
+    }
+    else if _rc ==0 {
+        di in red &quot; `label&#39; is present on labels of var `varlist&#39; &quot;
+        return scalar present = 1
+    } 
+end
+
+</code></pre>
+<p>To conclude, using can invoke the program <code>check_labels</code> as follows.</p>
+<pre><code>check_labels foreign , label(Domestic)
+ Domestic is present on labels of var foreign 
+
+ret list
+
+scalars:
+            r(present) =  1</code></pre>
+<pre><code>check_labels foreign , label(Borges)
+ Borges isn&#39;t present on labels of var foreign 
+
+ret list
+scalars:
+            r(present) =  0</code></pre>
+<p>Best!</p>
+</div>
 
 			</div>
 		</article>

@@ -17,8 +17,8 @@
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</guid>
-      <description> This brief post answer the question my orignal google search How to cheack if a value is contained into a variable on stata?
-sysuse auto, clear gen var = 0  </description>
+      <description>The problem This brief post answer the question my orignal google search How to cheack if a value is contained into a variable on stata?
+Imagine we have a problem where we need to check if a string is contained into the labels of another variable. Let’s start with a minimal example using sysuse auto and the variable foreing which is the only one with labels already in place.</description>
     </item>
     
   </channel>
