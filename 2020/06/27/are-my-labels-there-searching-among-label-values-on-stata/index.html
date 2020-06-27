@@ -57,8 +57,8 @@
 
 <div id="the-problem" class="section level1">
 <h1>The problem</h1>
-<p>This brief post answer the question my orignal google search <em>How to cheack if a value is contained into a variable on stata?</em></p>
-<p>Imagine we have a problem where we need to check if a string is contained into the labels of another variable. Let’s start with a minimal example using sysuse auto and the variable foreing which is the only one with labels already in place.</p>
+<p>This brief post answer the question my orignal google search <em>How to check if a value is contained into a variable on stata?</em></p>
+<p>Imagine we have a problem where we need to check if a string is contained into the labels of another variable. Let’s start with a minimal example using sysuse auto and the variable <code>foreing</code> which is the only one with labels already in place.</p>
 <pre><code>clear all
 sysuse auto, clear
 tab foreign 
@@ -90,7 +90,7 @@ tab foreign ,nola
 </div>
 <div id="the-explanation" class="section level1">
 <h1>The explanation</h1>
-<p>Well, let’s start beaking down the syntax used above, in small pieces. Take a look on the following lines. Fist, <code>label list</code> will list all the existent labels, where the only existent one is called <code>origin</code>. Therefore, when we repeate the summarize operation replacing `<code>: value label foreign'</code> by <code>origin</code> we, indeed, obtain the same results, meaning that learn that the the expression among quotes is no more than a way to call the name of the label attached to the variable <code>foreign</code>. To know more about such expressions that calculates results on the fly <a href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X0800800113">(N.Cox 2008)</a></p>
+<p>Well, let’s start breaking down the syntax used above in small pieces. Take a look on the following lines. Fist, <code>label list</code> will list all the existent labels, where the only existent one is called <code>origin</code>. Therefore, when we repeate the summarize operation replacing `<code>: value label foreign'</code> by <code>origin</code> we, indeed, obtain the same results, meaning that learn that the the expression among quotes is no more than a way to call the name of the label attached to the variable <code>foreign</code>. To know more about such expressions that calculates results on the fly <a href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X0800800113">(N.Cox 2008)</a></p>
 <pre><code>label list
 origin:
            0 Domestic
@@ -145,7 +145,12 @@ scalars:
 ret list
 scalars:
             r(present) =  0</code></pre>
-<p>Best!</p>
+<p>Resourses that inspired me to post this.</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/22767838/use-value-label-in-if-command" class="uri">https://stackoverflow.com/questions/22767838/use-value-label-in-if-command</a></li>
+<li><a href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1356395-access-label-of-value" class="uri">https://www.statalist.org/forums/forum/general-stata-discussion/general/1356395-access-label-of-value</a></li>
+<li><a href="https://journals.sagepub.com/doi/pdf/10.1177/1536867X1101100308" class="uri">https://journals.sagepub.com/doi/pdf/10.1177/1536867X1101100308</a></li>
+</ul>
 </div>
 
 			</div>
