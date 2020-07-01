@@ -27,12 +27,12 @@ Notas Ejercicio Resuelto</description>
     </item>
     
     <item>
-      <title>Are my labels there? Searching among label values on Stata</title>
+      <title>Are my labels there? Searching among label variables values on Stata</title>
       <link>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</link>
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</guid>
-      <description>The problem This brief post answer the question my orignal google search How to check if a value is contained into a variable on stata?
+      <description>The problem This brief post answer the question my orignal google search How to check if a value is contained into a label variable on stata?
 Imagine we have a problem where we need to check if a string is contained into the labels of another variable. Let’s start with a minimal example using sysuse auto and the variable foreing which is the only one with labels already in place.</description>
     </item>
     
@@ -51,12 +51,21 @@ S01: Introduccion a LaTeX Enunciado
     </item>
     
     <item>
+      <title>Fitting Conditional Logit using d0 Mata-based evaluator using maximum likelihood -ml- on Stata</title>
+      <link>/2020/05/01/fitting-conditional-logit-using-d0-mata-based-evaluator-using-maximum-likelihood-ml-on-stata/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/01/fitting-conditional-logit-using-d0-mata-based-evaluator-using-maximum-likelihood-ml-on-stata/</guid>
+      <description>This post is higly based on the excellent book Maximum likelihood estimation with Stata. Stata press Gould, W., Pitblado, J., &amp;amp; Sribney, W. (2006) and by any means tries to be a replacement for such an amazing reference. However, within the chapter 6 devoted to d-family -ml- evaluators, somehow something, in my humble opinion, very important was missing. The missing part was the discussion of Discrete Choice Models as a particular family of models specially suitable for such family of evaluators where ikelihood function does not meet the linearform restrictions.</description>
+    </item>
+    
+    <item>
       <title>CV</title>
       <link>/cv/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/cv/</guid>
-      <description>  </description>
+      <description>My CV is going to render below shortly (if regularity conditions are meet.)</description>
     </item>
     
     <item>
@@ -66,8 +75,8 @@ S01: Introduccion a LaTeX Enunciado
       
       <guid>/research/</guid>
       <description>I have some Working papers.
-  Is the Effect of Personality Traits on Academic Performance Influenced by Type of Tests and Study-Time Constraints?.(With Pablo Tapia and Renato Aguilar) The Big Five Traits and the Home Mortgage Delinquencies (with Pablo Tapia and Jose Luis Ruiz)   Conferences.
-  Sechi 2017, Satiago Chile. : Responsabilidad, Extroversión y Desempeño Académico frente Evaluaciones con Distinta Modalidad     Stata Meeting 2020, Bern, Switzerland.</description>
+Is the Effect of Personality Traits on Academic Performance Influenced by Type of Tests and Study-Time Constraints?.(With Pablo Tapia and Renato Aguilar)The Big Five Traits and the Home Mortgage Delinquencies (with Pablo Tapia and Jose Luis Ruiz)Conferences.
+Sechi 2017, Satiago Chile. : Responsabilidad, Extroversión y Desempeño Académico frente Evaluaciones con Distinta ModalidadStata Meeting 2020, Bern, Switzerland.</description>
     </item>
     
     <item>

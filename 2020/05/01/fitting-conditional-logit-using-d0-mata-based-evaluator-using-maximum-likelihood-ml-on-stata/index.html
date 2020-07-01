@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Fitting Conditional Logit using d0 Mata-based evaluator using maximum likelihood -ml- on Stata</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<header>
+	======================================<br>
+	===== <a href="/">Álvaro A. Gutiérrez Vargas</a> =====<br>
+	======================================
+	<div style="float: right;"></div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Hello Friend</b></a>.
+			
+			
+			<a href="/post/"><b>Post</b></a>.
+			
+			<a href="/research/"><b>Research</b></a>.
+			
+			<a href="/teaching/"><b>Teaching</b></a>.
+			
+			<a href="/about/"><b>About</b></a>.
+			
+			<a href="/cv/"><b>CV</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+	</nav>
+	</p> 
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Fitting Conditional Logit using d0 Mata-based evaluator using maximum likelihood -ml- on Stata</h1>
+			
+		           <a href="/tags/stata">Stata</a>
+        	       
+		           <a href="/tags/mata">Mata</a>
+        	       
+		           <a href="/tags/ml">ml</a>
+        	       
+		           <a href="/tags/discrete-choice-models">Discrete Choice Models</a>
+        	       
+
+			<div>
+				
+
+
+<p>This post is higly based on the excellent book <em>Maximum likelihood estimation with Stata. Stata press</em> <a href="https://www.stata.com/bookstore/maximum-likelihood-estimation-stata/">Gould, W., Pitblado, J., &amp; Sribney, W. (2006)</a> and by any means tries to be a replacement for such an amazing reference. However, within the chapter 6 devoted to <em>d-family</em> -ml- evaluators, somehow something, in my humble opinion, very important was missing. The missing part was the discussion of Discrete Choice Models as a particular family of models specially suitable for such family of evaluators where ikelihood function does not meet the linearform restrictions.</p>
+<p>Here is provide a way to both simulate such a data using Mata and then fit conventional Conditional Logit using a Mata-based d0 evaluator using -<a href="https://www.stata.com/manuals13/rml.pdf">ml</a>-.</p>
+<p>Additionally, if you follow closely, you will discover a couple of cool features of Mata. For example, how to integrate objects from Stata to Mata and vice versa and how to declare transformic objects in Mata.</p>
+<div id="data-generation" class="section level1">
+<h1>Data Generation</h1>
+<p>We are going to generate the following model:</p>
+<p><span class="math display">\[U_{in}=V_{in} + \varepsilon_{in} = \sum_{m=1}^{M}x_{im}\beta_{m} + \varepsilon_{in}\]</span>
+Knowing the probability of each individual selecting alternative <span class="math inline">\(i\)</span> is given by (Secction 3.10 <a href="https://eml.berkeley.edu/books/train1201.pdf">Train, K. E. (2009)</a> :
+<span class="math display">\[P_{in}=\dfrac{e^{V_{in}}}{\sum_{j=1}^{J}e^{V_{jn}}}\]</span></p>
+<pre><code>clear all
+set seed 157
+set obs 2000
+gen id = _n
+local n_choices =5
+expand `n_choices&#39;
+bys id : gen alternative = _n
+
+gen x1 =  runiform(-2,2)
+gen x2 =  runiform(-2,2)
+
+matrix betas = (0.5 ,2)
+global individuals = &quot;id&quot;
+
+mata: 
+// Calls from Stata the matrix &quot;betas&quot;
+betas =st_matrix(&quot;betas&quot;)
+// Generates a view of all attributes (M) x*
+st_view(X = ., ., &quot;x*&quot;)
+// Generates a view individuals id 
+st_view(panvar = ., ., st_global(&quot;individuals&quot;))
+// Extemely usefull utilities for panel data 
+paninfo = panelsetup(panvar, 1)     
+npanels = panelstats(paninfo)[1] 
+   
+// Looping over individuals (n)
+for(n=1; n &lt;= npanels; ++n) { 
+    // Extract only the submatrix of individual n
+    x_n = panelsubmatrix(X, n, paninfo) 
+    
+    // Linear utility
+    util_n =betas :* x_n
+    util_sum =rowsum(util_n) 
+    U_exp = exp(util_sum)
+    // Probability of each alternative
+    p_i =     U_exp :/ colsum(U_exp)
+    
+    // Probability balance of alternatives
+    cum_p_i =runningsum(p_i)    
+    rand_draws = J(rows(x_n),1,uniform(1,1)) 
+    pbb_balance = rand_draws:&lt;cum_p_i
+    cum_pbb_balance = runningsum(pbb_balance)
+    choice_n = (cum_pbb_balance:== J(rows(x_n),1,1))
+    
+    // Storing each individual choice.
+    if (n==1) Y =choice_n    
+    else       Y = Y \ choice_n    
+}
+   
+// Creates a new Stata variable called &quot;choice&quot;    
+idx = st_addvar(&quot;float&quot;, &quot;choice&quot;)
+// save the content of Y on &quot;choice&quot; Stata variable
+st_store(., idx, Y)
+     
+end
+
+
+
+</code></pre>
+</div>
+<div id="fitting-clogit-using-mata-evaluator--ml-" class="section level1">
+<h1>Fitting Clogit using Mata evaluator &amp; -<a href="https://www.stata.com/manuals13/rml.pdf">ml</a>-</h1>
+<p>Here the trick is define a Mata evaluator and call it from -<a href="https://www.stata.com/manuals13/rml.pdf">ml</a>-. For further details see <a href="https://www.stata.com/bookstore/maximum-likelihood-estimation-stata/">Gould, W., Pitblado, J., &amp; Sribney, W. (2006).</a></p>
+<pre><code>mata:
+    void myclogit_eval_d0(transmorphic scalar M, real scalar todo,
+    real rowvector b, real scalar lnf,
+    real rowvector g, real matrix H)
+ {
+    /*-----------------------------*/
+    /*----variables declaration----*/
+    /*-----------------------------*/
+    
+    real matrix panvar  
+    real matrix paninfo 
+    real scalar npanels
+
+    real scalar n 
+    real matrix Y 
+    real matrix X 
+    real matrix x_n 
+    real matrix y_n 
+
+    // variables creation
+    Y = moptimize_util_depvar(M, 1)     
+    X= moptimize_init_eq_indepvars(M,1)    
+
+    st_view(panvar = ., ., st_global(&quot;individuals&quot;))
+    paninfo = panelsetup(panvar, 1)     
+    npanels = panelstats(paninfo)[1] 
+    lnfj = J(npanels, 1, 0) 
+
+    for(n=1; n &lt;= npanels; ++n) {
+        x_n = panelsubmatrix(X, n, paninfo) 
+        y_n = panelsubmatrix(Y, n, paninfo) 
+        // Linear utility        
+        U = rowsum(b:* x_n) 
+        // exp() Utility
+        U_exp = exp(U)
+        // Probability 
+        p_i = colsum((U_exp :* y_n))  / colsum(U_exp)
+        // log probability
+        lnfj[n] = ln(p_i)
+         }
+    // Sum over individuals (n) to obtain loglikeli    
+    lnf = moptimize_util_sum(M, lnfj)
+}
+end
+
+ml model d0 myclogit_eval_d0() (myclogit:  choice = x*, nocons) 
+</code></pre>
+<div id="results-myclogit-vs-old-clogit-still-kicking" class="section level2">
+<h2>Results: MyClogit vs old clogit (still kicking!)</h2>
+<div id="myclogit" class="section level3">
+<h3>MyClogit</h3>
+<p>Now that we just declare tje ml model using myclogit_eval_d0() we can fit it just tipying <code>ml maximize</code>.</p>
+<pre><code>ml maximize 
+
+initial:       log likelihood = -3218.8758
+alternative:   log likelihood = -3208.8925
+rescale:       log likelihood = -2783.5704
+Iteration 0:   log likelihood = -2783.5704  
+Iteration 1:   log likelihood = -1690.7307  
+Iteration 2:   log likelihood =  -1583.515  
+Iteration 3:   log likelihood = -1582.7268  
+Iteration 4:   log likelihood = -1582.7261  
+Iteration 5:   log likelihood = -1582.7261  
+
+                                                Number of obs     =     10,000
+                                                Wald chi2(2)      =    1250.08
+Log likelihood = -1582.7261                     Prob &gt; chi2       =     0.0000
+
+------------------------------------------------------------------------------
+      choice |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+          x1 |   .5137069   .0319027    16.10   0.000     .4511788     .576235
+          x2 |   1.980155   .0567223    34.91   0.000     1.868981    2.091328
+------------------------------------------------------------------------------
+</code></pre>
+</div>
+<div id="clogit--old-but-still-kicking" class="section level3">
+<h3>-<a href="https://www.stata.com/manuals13/rclogit.pdf">clogit</a>- (old but still kicking!)</h3>
+<p>Here is the same model fitted using -<a href="https://www.stata.com/manuals13/rclogit.pdf">clogit</a>-, and as you can see the results are equivalent.</p>
+<pre><code>clogit  choice  x* ,group(id)
+
+Iteration 0:   log likelihood = -1626.3245  
+Iteration 1:   log likelihood = -1582.7827  
+Iteration 2:   log likelihood = -1582.7261  
+Iteration 3:   log likelihood = -1582.7261  
+
+Conditional (fixed-effects) logistic regression
+
+                                                Number of obs     =     10,000
+                                                LR chi2(2)        =    3272.30
+                                                Prob &gt; chi2       =     0.0000
+Log likelihood = -1582.7261                     Pseudo R2         =     0.5083
+
+------------------------------------------------------------------------------
+      choice |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+          x1 |   .5137069   .0319027    16.10   0.000     .4511788     .576235
+          x2 |   1.980154   .0567223    34.91   0.000     1.868981    2.091328
+------------------------------------------------------------------------------
+</code></pre>
+</div>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<ul>
+<li><a href="https://www.stata.com/bookstore/maximum-likelihood-estimation-stata/">Gould, W., Pitblado, J., &amp; Sribney, W. (2006).</a>. Maximum likelihood estimation with Stata. Stata press.</li>
+<li><a href="https://eml.berkeley.edu/books/train1201.pdf">Train, K. E. (2009)</a>. Discrete choice methods with simulation. Cambridge university press.</li>
+</ul>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="/"><b>Álvaro A. Gutiérrez Vargas</b></a>.
+	<a href="mailto:alvaro.gutierrezvargas@kuleuven.be"><b>Email</b></a>.
+	<a href="https://github.com/alvarogutyerrez"><b>Github</b></a>.
+	<a href="https://twitter.com/alvarogutyerrez"><b>Twitter</b></a>.
+	<a href="https://www.flickr.com/photos/alvaro_gutierrez/"><b>Flickr</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

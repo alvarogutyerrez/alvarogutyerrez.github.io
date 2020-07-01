@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Álvaro A. Gutiérrez Vargas</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Álvaro A. Gutiérrez Vargas</description>
+    <title>ml on Álvaro A. Gutiérrez Vargas</title>
+    <link>/tags/ml/</link>
+    <description>Recent content in ml on Álvaro A. Gutiérrez Vargas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ml/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Are my labels there? Searching among label variables values on Stata</title>
-      <link>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</link>
-      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/06/27/are-my-labels-there-searching-among-label-values-on-stata/</guid>
-      <description>The problem This brief post answer the question my orignal google search How to check if a value is contained into a label variable on stata?
-Imagine we have a problem where we need to check if a string is contained into the labels of another variable. Let’s start with a minimal example using sysuse auto and the variable foreing which is the only one with labels already in place.</description>
-    </item>
     
     <item>
       <title>Fitting Conditional Logit using d0 Mata-based evaluator using maximum likelihood -ml- on Stata</title>

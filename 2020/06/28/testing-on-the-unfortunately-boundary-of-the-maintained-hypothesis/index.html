@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Testing on the (unfortunately) boundary of the maintained Hypothesis</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<header>
+	======================================<br>
+	===== <a href="/">Álvaro A. Gutiérrez Vargas</a> =====<br>
+	======================================
+	<div style="float: right;"></div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Hello Friend</b></a>.
+			
+			
+			<a href="/post/"><b>Post</b></a>.
+			
+			<a href="/research/"><b>Research</b></a>.
+			
+			<a href="/teaching/"><b>Teaching</b></a>.
+			
+			<a href="/about/"><b>About</b></a>.
+			
+			<a href="/cv/"><b>CV</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+	</nav>
+	</p> 
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Testing on the (unfortunately) boundary of the maintained Hypothesis</h1>
+			
+		           <a href="/tags/hypothesis-testing">Hypothesis testing</a>
+        	       
+
+			<div>
+				
+
+
+<p>In standard testing problems, parameter values in the null hypothesis <strong>are interior points of the maintained hypothesis</strong>. <a href="https://www.jstor.org/stable/2692206">(D.K.Andrews, 2001)</a> The standard testing problema happens to be as follows being <span class="math inline">\(\beta_{1}\)</span> a sub-vector of the unknown parameter <span class="math inline">\(\theta\)</span>.
+<span class="math display">\[
+\begin{align}
+   H_{0}:&amp;&amp;\beta_{1}=\beta_{1*}  &amp;&amp; (\text{Null Hypotheses} ) \\
+   H_{1}:&amp;&amp;\beta_{1}\neq\beta_{1*}  &amp;&amp; (\text{Alternative Hypotheses} ) \\
+   K:&amp;&amp;\beta_{1}\in R^{p_{1}}  &amp;&amp; (\text{Maintained Hypotheses} ) \\
+   \text{where } &amp;&amp;  K = H_{0} \cup H_{1} 
+\end{align}
+\]</span>
+Additionally, <strong>all parameters are identified</strong> under the null and the alternative hypotheses.</p>
+<p>The main article of <a href="https://www.jstor.org/stable/2692206">D.K.Andrews, (2001)</a> works both with <a href="http://public.econ.duke.edu/~boller/Published_Papers/glossary_10.pdf">GARCH</a> models and <a href="https://stats.idre.ucla.edu/other/mult-pkg/introduction-to-linear-mixed-models/">Random Coefficients or Mixed</a> models. In the following I will just address the former case, given that is the one that I familiar with.</p>
+<p>We can argue that the regularity conditions stated above fail in the context of random coefficients given the following. Let try to test the <em>null hypothesis</em> that <span class="math inline">\(b\)</span> random coefficients have variances equal to zero. If we denote <span class="math inline">\(\beta_{1}\)</span> as the sum of the <span class="math inline">\(b\)</span> random coefficients variances that are specified to be zero under the null hyphothesis. The null, alternative, and maintained hypotheses are as follow:</p>
+<p><span class="math display">\[
+\begin{align}
+   H_{0}:&amp;&amp;\beta_{1}=0  &amp;&amp; (\text{Null Hypotheses} ) \\
+   H_{1}:&amp;&amp;\beta_{1}&gt;0  &amp;&amp; (\text{Alternative Hypotheses} ) \\
+   K:&amp;&amp;\beta_{1}\geq 0  &amp;&amp; (\text{Maintained Hypotheses} ) 
+\end{align}
+\]</span>
+Consequently, we can see that, under the null hyphothesis <span class="math inline">\(H_0\)</span>, <span class="math inline">\(\beta_{1}\)</span> <strong>is on the boundry of the maintained hypothesis</strong>. Therefore, we are in troubles….</p>
+<p>Additionally, suppose that some or all the <span class="math inline">\(b\)</span> random coefficients whose variances are under test are <em>allowed to be correlated with each other under</em> <span class="math inline">\(H_{0}\)</span>. Denoting <span class="math inline">\(\pi_{1}\)</span> the vector containing the correlation coefficients. Denote the <span class="math inline">\(b\)</span> vector of random coefficients variances that are under test by <span class="math inline">\(\beta_{1}\pi_{2}\)</span>. Here, <span class="math inline">\(\pi_{2}\)</span> is unit <span class="math inline">\(b\)</span> vector in the nonnegative orthant. Let <span class="math inline">\(\pi = (\pi^{&#39;}_{1},\pi^{&#39;}_{2})&#39;\)</span></p>
+<p>Here is the problem: Under the alternative hypothesis, <span class="math inline">\(\beta_{1}\)</span> and <span class="math inline">\(\pi\)</span> specify the variances and covariances of the random coefficients under test, <em>BUT</em> under the <strong>NULL Hypothesis</strong>, the parameter <span class="math inline">\(\pi\)</span> is not identified.</p>
+<div id="the-method" class="section level1">
+<h1>The Method:</h1>
+<div id="obtaining-the-asymptotic-null-distribution-of-the-test-statistics" class="section level3">
+<h3>Obtaining the asymptotic null distribution of the test statistics</h3>
+<p><span class="math inline">\(\mathscr{I}_{T}(\theta, \pi)\)</span>, where <span class="math inline">\((\theta, \pi)\)</span> are parameters that lie in the maintained hypothesis paramter space <span class="math inline">\(\Theta \times \Pi\)</span> and <span class="math inline">\(T\)</span> denotes the sample size.</p>
+<p>The null hypothesis can be written as <span class="math inline">\(H_{0}:\theta\in \Theta_{0}\)</span>, where <span class="math inline">\(\Theta_{0}\)</span> is a subset of <span class="math inline">\(\Theta\)</span>.</p>
+<p>The basic idea is:</p>
+<ol style="list-style-type: decimal">
+<li><p>Appoximate <span class="math inline">\(\mathscr{I}_{T}(\theta, \pi)\)</span> by a quadratic function of <span class="math inline">\(\theta\)</span> whose coefficients depend on <span class="math inline">\(\pi\)</span></p></li>
+<li><p>Shows that the approximation holds uniformly over <span class="math inline">\(\pi\in\Pi\)</span>.</p></li>
+<li><p>Approximate the unrestricted and restricted parameter spaces, <span class="math inline">\(\Theta\)</span> and <span class="math inline">\(\Theta_{0}\)</span>, by cones, as in <a href="https://www.jstor.org/stable/2236839">Chernoff (1954)</a>. and <a href="https://www.jstor.org/stable/2999564">Andrews (1999)</a>.</p></li>
+<li><p>Determine the asymptotic distributions of the (Suitably normalized) unrestricted and restricted estimators of <span class="math inline">\(\theta\)</span> given <span class="math inline">\(\pi\)</span> and of the estimator objective function evaluated at these two estimators <em>as stochastic processes indexed by</em> <span class="math inline">\(\pi\in\Pi\)</span></p></li>
+<li><p>Obtain the asymptotic null distributions of the test statistics by writing them as continuous functions of the (normalized) estimators and/or the objective function evaluated at these estimators and applying the <em>continuous mapping theorem</em>.</p></li>
+</ol>
+</div>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="/"><b>Álvaro A. Gutiérrez Vargas</b></a>.
+	<a href="mailto:alvaro.gutierrezvargas@kuleuven.be"><b>Email</b></a>.
+	<a href="https://github.com/alvarogutyerrez"><b>Github</b></a>.
+	<a href="https://twitter.com/alvarogutyerrez"><b>Twitter</b></a>.
+	<a href="https://www.flickr.com/photos/alvaro_gutierrez/"><b>Flickr</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

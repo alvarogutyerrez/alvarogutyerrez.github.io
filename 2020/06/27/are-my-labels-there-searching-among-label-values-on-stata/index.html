@@ -5,11 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Are my labels there? Searching among label values on Stata</title>
+	<title>Are my labels there? Searching among label variables values on Stata</title>
 	
 	
 	<link rel="stylesheet" href="/css/style.css">
 	
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 	<header>
@@ -44,7 +46,7 @@
 	
 	<main>
 		<article>
-			<h1>Are my labels there? Searching among label values on Stata</h1>
+			<h1>Are my labels there? Searching among label variables values on Stata</h1>
 			
 		           <a href="/tags/stata">Stata</a>
         	       
@@ -57,7 +59,7 @@
 
 <div id="the-problem" class="section level1">
 <h1>The problem</h1>
-<p>This brief post answer the question my orignal google search <em>How to check if a value is contained into a variable on stata?</em></p>
+<p>This brief post answer the question my orignal google search <em>How to check if a value is contained into a <em>label variable</em> on stata?</em></p>
 <p>Imagine we have a problem where we need to check if a string is contained into the labels of another variable. Let’s start with a minimal example using sysuse auto and the variable <code>foreing</code> which is the only one with labels already in place.</p>
 <pre><code>clear all
 sysuse auto, clear

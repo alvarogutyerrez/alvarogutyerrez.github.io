@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hypothesis testing on Álvaro A. Gutiérrez Vargas</title>
+    <link>/tags/hypothesis-testing/</link>
+    <description>Recent content in Hypothesis testing on Álvaro A. Gutiérrez Vargas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/hypothesis-testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing on the (unfortunately) boundary of the maintained Hypothesis</title>
+      <link>/2020/06/28/testing-on-the-unfortunately-boundary-of-the-maintained-hypothesis/</link>
+      <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/06/28/testing-on-the-unfortunately-boundary-of-the-maintained-hypothesis/</guid>
+      <description>In standard testing problems, parameter values in the null hypothesis are interior points of the maintained hypothesis. (D.K.Andrews, 2001) The standard testing problema happens to be as follows being \(\beta_{1}\) a sub-vector of the unknown parameter \(\theta\). \[ \begin{align} H_{0}:&amp;amp;&amp;amp;\beta_{1}=\beta_{1*} &amp;amp;&amp;amp; (\text{Null Hypotheses} ) \\ H_{1}:&amp;amp;&amp;amp;\beta_{1}\neq\beta_{1*} &amp;amp;&amp;amp; (\text{Alternative Hypotheses} ) \\ K:&amp;amp;&amp;amp;\beta_{1}\in R^{p_{1}} &amp;amp;&amp;amp; (\text{Maintained Hypotheses} ) \\ \text{where } &amp;amp;&amp;amp; K = H_{0} \cup H_{1} \end{align} \] Additionally, all parameters are identified under the null and the alternative hypotheses.</description>
+    </item>
+    
+  </channel>
+</rss>

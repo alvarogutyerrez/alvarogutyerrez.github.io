@@ -26,5 +26,14 @@ Funciones de Distribución
 Notas Ejercicio Resuelto</description>
     </item>
     
+    <item>
+      <title>Fitting Conditional Logit using d0 Mata-based evaluator using maximum likelihood -ml- on Stata</title>
+      <link>/2020/05/01/fitting-conditional-logit-using-d0-mata-based-evaluator-using-maximum-likelihood-ml-on-stata/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/01/fitting-conditional-logit-using-d0-mata-based-evaluator-using-maximum-likelihood-ml-on-stata/</guid>
+      <description>This post is higly based on the excellent book Maximum likelihood estimation with Stata. Stata press Gould, W., Pitblado, J., &amp;amp; Sribney, W. (2006) and by any means tries to be a replacement for such an amazing reference. However, within the chapter 6 devoted to d-family -ml- evaluators, somehow something, in my humble opinion, very important was missing. The missing part was the discussion of Discrete Choice Models as a particular family of models specially suitable for such family of evaluators where ikelihood function does not meet the linearform restrictions.</description>
+    </item>
+    
   </channel>
 </rss>
