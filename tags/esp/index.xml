@@ -19,11 +19,11 @@
       <guid>/teaching/oto-2019-introducci%C3%B3n-a-la-estad%C3%ADstica/</guid>
       <description>Notas del curso de pregrado Introducción a la Estadística, Facultad Economía y Negocios, Universidad de Chile.
 Estadística Descriptiva
-Notas Slides Propuesto 1 Propuesto 2
+NotasSlidesPropuesto 1Propuesto 2
 Teoría de Probabilidades &amp;amp; Conjuntos
-Notas Ejericio Resuelto
+NotasEjericio Resuelto
 Funciones de Distribución
-Notas Ejercicio Resuelto</description>
+NotasEjercicio Resuelto</description>
     </item>
     
     <item>
@@ -41,12 +41,12 @@ S01: Introduccion a LaTeX Enunciado
     </item>
     
     <item>
-      <title>[Pri-2019] [Grad]  BI para las Finanzas</title>
+      <title>[Pri-2019]  BI para las Finanzas</title>
       <link>/teaching/2020-01-01-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/teaching/2020-01-01-python/</guid>
-      <description>Descripción del Curso    Acá podrás encontrar las ayudantías computacionales del curso Business Intelligence para las Finanzas dictado al programa de Magister en Finanzas en la Universidad de Chile. Las clases van desde tópicos sencillos, como manejo de bases de datos mediante Pandas, hasta desarrollo de algotirmos complejos como Redes Neuronales con Scikit-Learn.    Sesión #1: Numpy (Numerical Python)    En esta sesión aprenderemos cómo ejecutar operaciones básicas del Álgebra Lineal, haciendo uso de la librería Numpy.</description>
+      <description>Descripción del Curso Acá podrás encontrar las ayudantías computacionales del curso Business Intelligence para las Finanzas dictado al programa de Magister en Finanzas en la Universidad de Chile. Las clases van desde tópicos sencillos, como manejo de bases de datos mediante Pandas, hasta desarrollo de algotirmos complejos como Redes Neuronales con Scikit-Learn.Sesión #1: Numpy (Numerical Python) En esta sesión aprenderemos cómo ejecutar operaciones básicas del Álgebra Lineal, haciendo uso de la librería Numpy.</description>
     </item>
     
   </channel>
