@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Álvaro A. Gutiérrez Vargas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to write your own command to fit a likelihood using a Mata evaluator with ml command on Stata</title>
+      <link>/2020/07/04/how-to-write-your-own-command-to-fit-a-likelihood-using-a-mata-evaluator-with-ml-command-on-stata/</link>
+      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/04/how-to-write-your-own-command-to-fit-a-likelihood-using-a-mata-evaluator-with-ml-command-on-stata/</guid>
+      <description>This post is an improvement version of a later post when I fitted a conditional logit using ml with Mata-based likelihood function. Now we are a little bit futher and we will write our own command -MyClogit- to perform the same task, which in principle, sound pretty repetititve and useless, but I can tell you that it does not.
+Also, as a warning this post assumes that you are an advanced user of Stata and Mata, as well as you know how to declare programs and parse sintax.</description>
+    </item>
     
     <item>
       <title>Are my labels there? Searching among label variables values on Stata</title>
