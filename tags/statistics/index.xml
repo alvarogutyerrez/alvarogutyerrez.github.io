@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on Álvaro A. Gutiérrez Vargas</title>
+    <link>/tags/statistics/</link>
+    <description>Recent content in Statistics on Álvaro A. Gutiérrez Vargas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Oto-2019] Introducción a la Estadística</title>
+      <link>/teaching/oto-2019-introducci%C3%B3n-a-la-estad%C3%ADstica/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/teaching/oto-2019-introducci%C3%B3n-a-la-estad%C3%ADstica/</guid>
+      <description>Notas del curso de pregrado Introducción a la Estadística, Facultad Economía y Negocios, Universidad de Chile.
+Estadística Descriptiva
+NotasSlidesPropuesto 1Propuesto 2
+Teoría de Probabilidades &amp;amp; Conjuntos
+NotasEjericio Resuelto
+Funciones de Distribución
+NotasEjercicio Resuelto</description>
+    </item>
+    
+  </channel>
+</rss>
