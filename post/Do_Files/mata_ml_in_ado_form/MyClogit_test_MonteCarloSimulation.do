@@ -2,14 +2,8 @@
 clear all
 set more off
 
-
-
-
 cd "C:\Users\u0133260\Dropbox\blog_with_smol\content\post\Do_Files\mata_ml_in_ado_form"
 
-
-
-*** Program gee ***
 ****************************
 capture program drop MyMonteCarlo
 program define MyMonteCarlo, rclass
@@ -81,12 +75,12 @@ end
 
 simulate  _b _se ,  reps(1) seed(157)   : MyMonteCarlo
 
-/*
+
 hist MyClogit_b_x1, scheme(  sj   ) den norm title("beta 1 MC Distribution ")
- graph export b1.png ,replace
+graph export b1.png ,replace
 
  
 hist MyClogit_b_x2, scheme(  sj   ) den norm title("beta 2 MC Distribution")
- graph export b2.png ,replace
-*/
+graph export b2.png ,replace
+
 

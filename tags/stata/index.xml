@@ -6,19 +6,38 @@
     <description>Recent content in Stata on Álvaro A. Gutiérrez Vargas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/stata/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>How to write your own command to fit a likelihood using a Mata evaluator with ml command on Stata</title>
+      <title>Monte Carlo Simulation of your own Stata command</title>
+      <link>/2020/07/05/monter-carlo-simulation-of-your-own-stata-command/</link>
+      <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/05/monter-carlo-simulation-of-your-own-stata-command/</guid>
+      <description>This the final step of a series of earlier post where I dealed with the combination of a Mata evaluators within ado files that uses ml to fit Maximum Likelihood Estimations. Here a single dofile is used but it relies in what we have done in my previous post when we built up MyClogit command.
+The only file needed is the following, and it can be downloaded by clicking on it.</description>
+    </item>
+    
+    <item>
+      <title>Write your own command to fit a likelihood using a Mata-evaluator with ml command on Stata</title>
       <link>/2020/07/04/how-to-write-your-own-command-to-fit-a-likelihood-using-a-mata-evaluator-with-ml-command-on-stata/</link>
       <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/07/04/how-to-write-your-own-command-to-fit-a-likelihood-using-a-mata-evaluator-with-ml-command-on-stata/</guid>
       <description>If you are reading this you should be quite desperate to get an answer about how to deal with the impossible [holy] trinity of put together a (1) d-family Mata evaluator, within an (2) ado file (a.k.a your own new command) that performs a maximum likelihood estimation using (3) -ml- invoking your Mata evaluator. Let me say that you are probably (?) in the write place.
 Indeed, this post is an improved version of a later post where I fitted a conditional logit using -ml- with Mata-based likelihood function.</description>
+    </item>
+    
+    <item>
+      <title>Fitting Conditional Logit using d0 Mata-based evaluator using maximum likelihood -ml- on Stata</title>
+      <link>/2020/07/03/fitting-conditional-logit-using-d0-mata-based-evaluator-using-maximum-likelihood-ml-on-stata/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/03/fitting-conditional-logit-using-d0-mata-based-evaluator-using-maximum-likelihood-ml-on-stata/</guid>
+      <description>This post is higly based on the excellent book Maximum likelihood estimation with Stata. Stata press Gould, W., Pitblado, J., &amp;amp; Sribney, W. (2006) and by any means tries to be a replacement for such an amazing reference. However, within the chapter 6 devoted to d-family -ml- evaluators, somehow something, in my humble opinion, very important was missing. The missing part was the discussion of Discrete Choice Models as a particular family of models specially suitable for such family of evaluators where ikelihood function does not meet the linearform restrictions.</description>
     </item>
     
     <item>
@@ -43,15 +62,6 @@ S01: Introduccion a LaTeX Enunciado
  S03: Manejo de Bases de Datos Enunciado Solución Data
  S04: Trabajo con Multi-bases de Datos Enunciado Solución Data
  S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1 Enunciado Solución Data</description>
-    </item>
-    
-    <item>
-      <title>Fitting Conditional Logit using d0 Mata-based evaluator using maximum likelihood -ml- on Stata</title>
-      <link>/2020/05/01/fitting-conditional-logit-using-d0-mata-based-evaluator-using-maximum-likelihood-ml-on-stata/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/05/01/fitting-conditional-logit-using-d0-mata-based-evaluator-using-maximum-likelihood-ml-on-stata/</guid>
-      <description>This post is higly based on the excellent book Maximum likelihood estimation with Stata. Stata press Gould, W., Pitblado, J., &amp;amp; Sribney, W. (2006) and by any means tries to be a replacement for such an amazing reference. However, within the chapter 6 devoted to d-family -ml- evaluators, somehow something, in my humble opinion, very important was missing. The missing part was the discussion of Discrete Choice Models as a particular family of models specially suitable for such family of evaluators where ikelihood function does not meet the linearform restrictions.</description>
     </item>
     
   </channel>

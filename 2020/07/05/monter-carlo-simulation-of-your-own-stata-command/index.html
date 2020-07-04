@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Monte Carlo Simulation of your own Stata command</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<header>
+	======================================<br>
+	===== <a href="/">Álvaro A. Gutiérrez Vargas</a> =====<br>
+	======================================
+	<div style="float: right;"></div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Hello Friend</b></a>.
+			
+			
+			<a href="/post/"><b>Post</b></a>.
+			
+			<a href="/research/"><b>Research</b></a>.
+			
+			<a href="/teaching/"><b>Teaching</b></a>.
+			
+			<a href="/about/"><b>About</b></a>.
+			
+			<a href="/cv/"><b>CV</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+	</nav>
+	</p> 
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Monte Carlo Simulation of your own Stata command</h1>
+			
+		           <a href="/tags/discrete-choice-models">Discrete Choice Models</a>
+        	       
+		           <a href="/tags/mata">Mata</a>
+        	       
+		           <a href="/tags/stata">Stata</a>
+        	       
+		           <a href="/tags/ml">ml</a>
+        	       
+
+			<div>
+				
+
+
+<p>This the final step of a series of earlier post where I dealed with the combination of a Mata evaluators within ado files that uses ml to fit Maximum Likelihood Estimations. Here a single dofile is used but it relies in what we have done in my previous <a href="https://alvarogutyerrez.github.io/2020/07/04/how-to-write-your-own-command-to-fit-a-likelihood-using-a-mata-evaluator-with-ml-command-on-stata/">post</a> when we built up <code>MyClogit</code> command.</p>
+<p>The only file needed is the following, and it can be downloaded by clicking on it.</p>
+<ul>
+<li><a href="https://www.dropbox.com/s/3hu2wps6fzljnas/MyClogit_test_MonteCarloSimulation.do?dl=0">MyClogit_test_MC</a></li>
+</ul>
+<div id="mymontecarlo-program" class="section level1">
+<h1>MyMonteCarlo program</h1>
+<p>The first step is to define a program that we will then call using <a href="https://www.stata.com/manuals13/rsimulate.pdf">-simulate-</a>. This follows the same structure of our past programs. Also in the middle the mata function data_gen() (listed below)is invoked, to generate the chosen alternatives. Finally it just invoke again MyClogit to fit the model.</p>
+<pre><code>capture program drop MyMonteCarlo
+program define MyMonteCarlo, rclass
+    version 12
+    drop _all
+    set obs 1000
+    gen id = _n
+    local n_choices =3
+    expand `n_choices&#39;
+    bys id : gen alternative = _n
+    
+    
+    // Regressors
+    gen x1 =  runiform(-2,2)
+    gen x2 =  runiform(-2,2)
+    matrix betas_st = (0.5,2)
+    
+    // Calling generating data
+    mata: data_gen()
+    
+    // Fitting the model
+    MyClogit choice  x* , group(id) 
+
+end</code></pre>
+</div>
+<div id="data-generation" class="section level1">
+<h1>Data Generation</h1>
+<p>We used a <a href="https://www.stata.com/manuals13/m-2void.pdf">void</a> matrix in Mata to create the data. This Mata function is invoked by <code>MyMonteCarlo</code>. This way to similate the data was highly inspired by this <a href="https://www.statalist.org/forums/forum/general-stata-discussion/mata/1399455-how-to-do-simulation-in-stata-with-a-variable-generated-in-mata">post</a> in <a href="https://www.statalist.org/">Statalist</a>.</p>
+<pre><code>mata: 
+void data_gen() 
+{
+        betas =st_matrix(&quot;betas_st&quot;)
+
+        st_view(X = ., ., &quot;x*&quot;)
+        st_view(panvar = ., ., &quot;id&quot;)
+        paninfo = panelsetup(panvar, 1)     
+        npanels = panelstats(paninfo)[1] 
+        
+
+
+        for(n=1; n &lt;= npanels; ++n) { 
+
+            x_n = panelsubmatrix(X, n, paninfo) 
+            // Linear utility
+            util_n =betas :* x_n
+            util_sum =rowsum(util_n) 
+            U_exp = exp(util_sum)
+            // Probability of each alternative
+            p_i =     U_exp :/ colsum(U_exp)
+                
+            cum_p_i =runningsum(p_i)    
+            rand_draws = J(rows(x_n),1,uniform(1,1)) 
+            pbb_balance = rand_draws:&lt;cum_p_i
+            cum_pbb_balance = runningsum(pbb_balance)
+            choice_n = (cum_pbb_balance:== J(rows(x_n),1,1))
+
+            
+            if (n==1)     Y =choice_n   
+            else Y=Y \ choice_n 
+            
+         }
+    
+        resindex = st_addvar(&quot;byte&quot;,&quot;choice&quot;)
+        st_store((1,rows(Y)),resindex,Y)    
+}
+end</code></pre>
+</div>
+<div id="monte-carlo-simulation" class="section level1">
+<h1>Monte Carlo Simulation</h1>
+<p>To perform the simulations we used <a href="https://www.stata.com/manuals13/rsimulate.pdf">-simulate-</a> which is a fairly simple way to run reapead times a model while saving relevant results. In this way we invoke <code>MyMonteCarlo</code> program and we run it 1000 times with a seed(157) for replicability.</p>
+<pre><code>simulate  _b _se ,  reps(1000) seed(157)   : MyMonteCarlo
+
+      command:  MyMonteCarlo
+
+Simulations (1000)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+..................................................    50
+..................................................   100
+..................................................   150
+..................................................   200
+..................................................   250
+..................................................   300
+..................................................   350
+..................................................   400
+..................................................   450
+..................................................   500
+..................................................   550
+..................................................   600
+..................................................   650
+..................................................   700
+..................................................   750
+..................................................   800
+..................................................   850
+..................................................   900
+..................................................   950
+..................................................  1000
+
+
+hist MyClogit_b_x1, scheme(  sj   ) den norm title(&quot;beta 1 MC Distribution &quot;)
+graph export b1.png ,replace
+
+ 
+hist MyClogit_b_x2, scheme(  sj   ) den norm title(&quot;beta 2 MC Distribution&quot;)
+graph export b2.png ,replace
+</code></pre>
+</div>
+<div id="histograms-of-the-results" class="section level1">
+<h1>Histograms of the results</h1>
+<p><img src="/post/2020-07-04-monter-carlo-simulation-of-your-own-stata-command_files/b1.png" style="width:55.0%" /></p>
+<p><img src="/post/2020-07-04-monter-carlo-simulation-of-your-own-stata-command_files/b2.png" style="width:55.0%" /></p>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<ul>
+<li><p><a href="https://www.stata.com/bookstore/maximum-likelihood-estimation-stata/">Gould, W., Pitblado, J., &amp; Sribney, W. (2006).</a>. Maximum likelihood estimation with Stata. Stata press.</p></li>
+<li><p><a href="https://www.statalist.org/forums/forum/general-stata-discussion/mata/1399455-how-to-do-simulation-in-stata-with-a-variable-generated-in-mata">Here is where i got the idea of the void matrix!</a></p></li>
+<li><p><a href="https://blog.stata.com/2015/10/06/monte-carlo-simulations-using-stata/" class="uri">https://blog.stata.com/2015/10/06/monte-carlo-simulations-using-stata/</a></p></li>
+<li><p><a href="https://fmwww.bc.edu/GStat/docs/StataSimul.pdf" class="uri">https://fmwww.bc.edu/GStat/docs/StataSimul.pdf</a></p></li>
+<li><p><a href="https://stats.idre.ucla.edu/stata/faq/monte-carlo-power-simulation-of-a-multilevel-model/" class="uri">https://stats.idre.ucla.edu/stata/faq/monte-carlo-power-simulation-of-a-multilevel-model/</a></p></li>
+</ul>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="/"><b>Álvaro A. Gutiérrez Vargas</b></a>.
+	<a href="mailto:alvaro.gutierrezvargas@kuleuven.be"><b>Email</b></a>.
+	<a href="https://github.com/alvarogutyerrez"><b>Github</b></a>.
+	<a href="https://twitter.com/alvarogutyerrez"><b>Twitter</b></a>.
+	<a href="https://www.flickr.com/photos/alvaro_gutierrez/"><b>Flickr</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
