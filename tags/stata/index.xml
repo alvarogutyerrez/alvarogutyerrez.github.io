@@ -17,8 +17,8 @@
       <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/07/04/how-to-write-your-own-command-to-fit-a-likelihood-using-a-mata-evaluator-with-ml-command-on-stata/</guid>
-      <description>This post is an improvement version of a later post when I fitted a conditional logit using ml with Mata-based likelihood function. Now we are a little bit futher and we will write our own command -MyClogit- to perform the same task, which in principle, sound pretty repetititve and useless, but I can tell you that it does not.
-Also, as a warning this post assumes that you are an advanced user of Stata and Mata, as well as you know how to declare programs and parse sintax.</description>
+      <description>If you are reading this you should be quite desperate to get an answer about how to deal with the impossible [holy] trinity of put together a (1) d-family Mata evaluator, within an (2) ado file (a.k.a your own new command) that performs a maximum likelihood estimation using (3) -ml- invoking your Mata evaluator. Let me say that you are probably (?) in the write place.
+Indeed, this post is an improved version of a later post where I fitted a conditional logit using -ml- with Mata-based likelihood function.</description>
     </item>
     
     <item>
