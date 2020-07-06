@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Monte Carlo Simulation of your own Stata command</title>
+      <title>Monte Carlo Simulation of your own Stata command with Mata-generated data.</title>
       <link>/2020/07/05/monter-carlo-simulation-of-your-own-stata-command/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -46,7 +46,7 @@ Indeed, this post is an improved version of a later post where I fitted a condit
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/teaching/oto-2019-introduccion-a-la-estadistica/</guid>
-      <description>Notas del curso de pregrado Introducción a la Estadística, Facultad Economía y Negocios, Universidad de Chile.
+      <description>Notas del curso de pregrado Introducción a la Estadística, Facultad Economía y Negocios, Universidad de Chile. Notas incompletas y posiblemente con typos. Leer con precaución.
 Estadística Descriptiva
 NotasSlidesPropuesto 1Propuesto 2
 Teoría de Probabilidades &amp;amp; Conjuntos
@@ -66,17 +66,17 @@ Imagine we have a problem where we need to check if a string is contained into t
     </item>
     
     <item>
-      <title>[Oto-2019]: StataLaTeX Combo</title>
+      <title>[Oto-2019] StataLaTeX Combo</title>
       <link>/teaching/statalatexcombo/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/teaching/statalatexcombo/</guid>
       <description>Este es un compedio del material impartido en el Taller Stata &amp;amp; LaTeX a los alumnos del curso de Econometría Financiera del Master de Finanzas de la Universidad de Chile.
-S01: Introduccion a LaTeX Enunciado
- S02: Estadística Descriptiva Enunciado Solución Data
- S03: Manejo de Bases de Datos Enunciado Solución Data
- S04: Trabajo con Multi-bases de Datos Enunciado Solución Data
- S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1 Enunciado Solución Data</description>
+S01: Introduccion a LaTeXEnunciado
+S02: Estadística DescriptivaEnunciado Solución Data
+S03: Manejo de Bases de DatosEnunciado Solución Data
+S04: Trabajo con Multi-bases de DatosEnunciado Solución Data
+S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1Enunciado Solución Data</description>
     </item>
     
     <item>
@@ -100,21 +100,21 @@ S01: Introduccion a LaTeX Enunciado
     </item>
     
     <item>
+      <title></title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>About me If you navigated up to here means that you deliverately wanted to know more about me. I don&amp;rsquo;t really know what to say. I am just a learner enthusiast. Currently I am in Belgium working to get PhD at the Research Centre for Operations Research and Statistics (ORSTAT) at KU Leuven. I do really like computers and I survive exclusively out of plants.</description>
+    </item>
+    
+    <item>
       <title>[Pri-2019] BI para las Finanzas</title>
       <link>/teaching/2020-01-01-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/teaching/2020-01-01-python/</guid>
       <description>Descripción del Curso Acá podrás encontrar las ayudantías computacionales del curso Business Intelligence para las Finanzas dictado al programa de Magister en Finanzas en la Universidad de Chile. Las clases van desde tópicos sencillos, como manejo de bases de datos mediante Pandas, hasta desarrollo de algotirmos complejos como Redes Neuronales con Scikit-Learn.Sesión #1: Numpy (Numerical Python) En esta sesión aprenderemos cómo ejecutar operaciones básicas del Álgebra Lineal, haciendo uso de la librería Numpy.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>If you navigated up to here means that you deliverately wanted to know more about me. I don&amp;rsquo;t really know what to say. I am just a learner enthusiast. Currently I am in Belgium working to get PhD in the field of Discrete Choice Modelling. I like computers and I survive exclusively out of plants.</description>
     </item>
     
   </channel>

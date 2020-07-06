@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Monte Carlo Simulation of your own Stata command</title>
+      <title>Monte Carlo Simulation of your own Stata command with Mata-generated data.</title>
       <link>/2020/07/05/monter-carlo-simulation-of-your-own-stata-command/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -46,7 +46,7 @@ Indeed, this post is an improved version of a later post where I fitted a condit
       <pubDate>Sat, 27 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/teaching/oto-2019-introduccion-a-la-estadistica/</guid>
-      <description>Notas del curso de pregrado Introducción a la Estadística, Facultad Economía y Negocios, Universidad de Chile.
+      <description>Notas del curso de pregrado Introducción a la Estadística, Facultad Economía y Negocios, Universidad de Chile. Notas incompletas y posiblemente con typos. Leer con precaución.
 Estadística Descriptiva
 NotasSlidesPropuesto 1Propuesto 2
 Teoría de Probabilidades &amp;amp; Conjuntos

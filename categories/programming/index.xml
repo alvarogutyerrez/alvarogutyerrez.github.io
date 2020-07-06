@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Monte Carlo Simulation of your own Stata command</title>
+      <title>Monte Carlo Simulation of your own Stata command with Mata-generated data.</title>
       <link>/2020/07/05/monter-carlo-simulation-of-your-own-stata-command/</link>
       <pubDate>Sun, 05 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -51,17 +51,17 @@ Imagine we have a problem where we need to check if a string is contained into t
     </item>
     
     <item>
-      <title>[Oto-2019]: StataLaTeX Combo</title>
+      <title>[Oto-2019] StataLaTeX Combo</title>
       <link>/teaching/statalatexcombo/</link>
       <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>/teaching/statalatexcombo/</guid>
       <description>Este es un compedio del material impartido en el Taller Stata &amp;amp; LaTeX a los alumnos del curso de Econometría Financiera del Master de Finanzas de la Universidad de Chile.
-S01: Introduccion a LaTeX Enunciado
- S02: Estadística Descriptiva Enunciado Solución Data
- S03: Manejo de Bases de Datos Enunciado Solución Data
- S04: Trabajo con Multi-bases de Datos Enunciado Solución Data
- S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1 Enunciado Solución Data</description>
+S01: Introduccion a LaTeXEnunciado
+S02: Estadística DescriptivaEnunciado Solución Data
+S03: Manejo de Bases de DatosEnunciado Solución Data
+S04: Trabajo con Multi-bases de DatosEnunciado Solución Data
+S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1Enunciado Solución Data</description>
     </item>
     
   </channel>
