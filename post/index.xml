@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Álvaro A. Gutiérrez Vargas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TikZ coordinate graph from scratch. The simple, but effective way.</title>
+      <link>/2020/07/10/tikz-graph-from-scratch/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/10/tikz-graph-from-scratch/</guid>
+      <description>Lately I had to create a graph to exemplify something in a document. I was somehow familiar with TikZ but given the immense amount of templates online it was quite difficult to stick to one, because most of them had so many unnesesary features for my purpose. Therefore, using the two references listed at the bottom I came up with something quite useful and intuitive to use a template to solve my problem.</description>
+    </item>
     
     <item>
       <title>Monte Carlo Simulation of your own Stata command with Mata-generated data.</title>

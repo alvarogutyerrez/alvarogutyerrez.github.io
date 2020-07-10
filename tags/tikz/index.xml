@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LaTeX on Álvaro A. Gutiérrez Vargas</title>
-    <link>/tags/latex/</link>
-    <description>Recent content in LaTeX on Álvaro A. Gutiérrez Vargas</description>
+    <title>TikZ on Álvaro A. Gutiérrez Vargas</title>
+    <link>/tags/tikz/</link>
+    <description>Recent content in TikZ on Álvaro A. Gutiérrez Vargas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/tikz/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,20 +18,6 @@
       
       <guid>/2020/07/10/tikz-graph-from-scratch/</guid>
       <description>Lately I had to create a graph to exemplify something in a document. I was somehow familiar with TikZ but given the immense amount of templates online it was quite difficult to stick to one, because most of them had so many unnesesary features for my purpose. Therefore, using the two references listed at the bottom I came up with something quite useful and intuitive to use a template to solve my problem.</description>
-    </item>
-    
-    <item>
-      <title>[Oto-2019] StataLaTeX Combo</title>
-      <link>/teaching/statalatexcombo/</link>
-      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/teaching/statalatexcombo/</guid>
-      <description>Este es un compedio del material impartido en el Taller Stata &amp;amp; LaTeX a los alumnos del curso de Econometría Financiera del Master de Finanzas de la Universidad de Chile.
-S01: Introduccion a LaTeXEnunciado
-S02: Estadística DescriptivaEnunciado Solución Data
-S03: Manejo de Bases de DatosEnunciado Solución Data
-S04: Trabajo con Multi-bases de DatosEnunciado Solución Data
-S05: Loops &amp;amp; Macros &amp;amp; Automatización Season 1Enunciado Solución Data</description>
     </item>
     
   </channel>
