@@ -17,7 +17,7 @@
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/07/10/tikz-graph-from-scratch/</guid>
-      <description>Lately I had to create a graph to exemplify something in a document. I was somehow familiar with TikZ but given the immense amount of templates online it was quite difficult to stick to one, because most of them had so many unnesesary features for my purpose. Therefore, using the two references listed at the bottom I came up with something quite useful and intuitive to use a template to solve my problem.</description>
+      <description>Lately I really keen to create a couple of graphs to exemplify something in a manuscript that I have been working. Even though, I was somehow familiar with TikZ, given the immense amount of templates online it was quite difficult to stick to only one, because most of them had so many unnesesary features for my purpose. Finally, using the two references listed at the bottom I came up with something quite useful and intuitive to solve my problem.</description>
     </item>
     
   </channel>
