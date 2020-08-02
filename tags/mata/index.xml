@@ -6,10 +6,19 @@
     <description>Recent content in Mata on Álvaro A. Gutiérrez Vargas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/mata/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sloppy coding (save a friend)</title>
+      <link>/2020/07/31/sloppy-coding-save-a-friend/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/31/sloppy-coding-save-a-friend/</guid>
+      <description>404</description>
+    </item>
     
     <item>
       <title>Monte Carlo Simulation of your own Stata command with Mata-generated data.</title>
