@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>String or not to String on Stata: Collection of usefull tools</title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<header>
+	======================================<br>
+	===== <a href="/">Álvaro A. Gutiérrez Vargas</a> =====<br>
+	======================================
+	<div style="float: right;"></div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Hello Friend</b></a>.
+			
+			
+			<a href="/post/"><b>Post</b></a>.
+			
+			<a href="/research/"><b>Research</b></a>.
+			
+			<a href="/teaching/"><b>Teaching</b></a>.
+			
+			<a href="/about/"><b>About</b></a>.
+			
+			<a href="/cv/"><b>CV</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+	</nav>
+	</p> 
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>String or not to String on Stata: Collection of usefull tools</h1>
+			
+		           <a href="/tags/stata">Stata</a>
+        	       
+		           <a href="/tags/eng">ENG</a>
+        	       
+
+			<div>
+				
+
+
+<div id="random-string-utilities-that-saved-me-in-the-past." class="section level1">
+<h1>Random string utilities that saved me in the past.</h1>
+<div id="parsing-cmdline-after-a-estimation-command." class="section level2">
+<h2>Parsing cmdline after a estimation command.</h2>
+<pre><code>. qui reg price rep78 length foreign , robust 
+
+. local what_I_typed = e(cmdline)
+
+. di &quot;`what_I_typed&#39;&quot;
+regress price rep78 length foreign , robust</code></pre>
+<div id="gettoken-be-carefull-with-the-spaces" class="section level3">
+<h3>gettoken: be carefull with the spaces (!!)</h3>
+<p>we can split the command (regress) from the rest.</p>
+<pre><code>. gettoken command rhs : what_I_typed ,parse(&quot; ,&quot;) // first token and the rest
+
+. di &quot;`command&#39;&quot;
+regress
+
+. di &quot;`rhs&#39;&quot;
+ price rep78 length foreign , robust
+</code></pre>
+<p>Also we can split the explained variable (price) from all the rest.</p>
+<pre><code>. gettoken y x_plus_options : rhs ,parse(&quot; ,&quot;) // first token and the rest
+
+. di &quot;`x_plus_options&#39;&quot;
+ rep78 length foreign , robust</code></pre>
+<p>Finally we can parse the regressors from the options using parse(“,”) instead of parse(" ,"). Yes, they are different.</p>
+<pre><code>. gettoken x options : rhs ,parse(&quot;,&quot;) // split using &quot;,&quot; (look carefully!)
+
+. di &quot;`x&#39;&quot;
+price rep78 length foreign 
+
+. di &quot;`options&#39;&quot;
+, robust
+</code></pre>
+</div>
+</div>
+<div id="word-function" class="section level2">
+<h2>word() function</h2>
+<div id="get-the-first-and-last-regressors" class="section level3">
+<h3>Get the first and last regressors</h3>
+<pre><code>. loc first_x `=word(&quot;`x&#39;&quot;,1)&#39;
+. di   &quot;`first_x&#39;&quot;
+rep78
+
+. loc last_x `=word(&quot;`x&#39;&quot;,-1)&#39;
+. di   &quot;`last_x&#39;&quot;
+foreign
+</code></pre>
+</div>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p><a href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1408707-drop-the-last-4-characters-of-a-string">1</a></p>
+<p><a href="https://www.statalist.org/forums/forum/general-stata-discussion/general/1397918-remove-part-of-string-variable-if-it-contains-a-word">2</a></p>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="/"><b>Álvaro A. Gutiérrez Vargas</b></a>.
+	<a href="mailto:alvaro.gutierrezvargas@kuleuven.be"><b>Email</b></a>.
+	<a href="https://github.com/alvarogutyerrez"><b>Github</b></a>.
+	<a href="https://twitter.com/alvarogutyerrez"><b>Twitter</b></a>.
+	<a href="https://www.linkedin.com/in/%C3%A1lvaro-a-guti%C3%A9rrez-vargas-627b20138/"><b>Linkedin</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

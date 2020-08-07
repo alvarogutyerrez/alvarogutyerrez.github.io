@@ -13,11 +13,11 @@
     
     <item>
       <title>String or not to String on Stata: Collection of usefull tools</title>
-      <link>/2020/08/02/string-or-not-to-string-on-stata-collection-of-usefull-tools/</link>
+      <link>/2020/08/02/string-or-not-to-string-on-stata-collection-of-useful-tools/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/08/02/string-or-not-to-string-on-stata-collection-of-usefull-tools/</guid>
-      <description>Random string utilities that saved me in the past.Pasing cmdline after a estimation command.. qui reg price rep78 length foreign , robust . local what_I_typed = e(cmdline). di &amp;quot;`what_I_typed&amp;#39;&amp;quot;regress price rep78 length foreign , robustgettoken: be carefull with the spaces (!!)we can split the command (regress) from the rest.
+      <guid>/2020/08/02/string-or-not-to-string-on-stata-collection-of-useful-tools/</guid>
+      <description>Random string utilities that saved me in the past.Parsing cmdline after a estimation command.. qui reg price rep78 length foreign , robust . local what_I_typed = e(cmdline). di &amp;quot;`what_I_typed&amp;#39;&amp;quot;regress price rep78 length foreign , robustgettoken: be carefull with the spaces (!!)we can split the command (regress) from the rest.
 . gettoken command rhs : what_I_typed ,parse(&amp;quot; ,&amp;quot;) // first token and the rest.</description>
     </item>
     
