@@ -6,10 +6,21 @@
     <description>Recent content in Discrete Choice Models on Álvaro A. Gutiérrez Vargas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/discrete-choice-models/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>randregret at the UK Stata Meeting - London, 2020!</title>
+      <link>/2020/09/10/randregret-at-the-uk-stata-meeting-london-2020/</link>
+      <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/10/randregret-at-the-uk-stata-meeting-london-2020/</guid>
+      <description>UK Stata Meeting - London, 2020.Slides from my presentation at the UK Stata Meeting should render below, if not you can get them from this link. I hope you enjoy them! Any questions are very welcome to my email :)
+Also the repository with the source code and examples can be found here: https://github.com/alvarogutyerrez/randregret
+</description>
+    </item>
     
     <item>
       <title>Monte Carlo Simulation of your own Stata command with Mata-generated data.</title>
