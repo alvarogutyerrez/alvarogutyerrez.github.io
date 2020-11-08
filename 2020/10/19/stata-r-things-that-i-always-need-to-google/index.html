@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Stata / R things that I always need to Google </title>
+	<title>Reshape using dplyr</title>
 	
 	
 	<link rel="stylesheet" href="/css/style.css">
@@ -46,7 +46,7 @@
 	
 	<main>
 		<article>
-			<h1>Stata / R things that I always need to Google </h1>
+			<h1>Reshape using dplyr</h1>
 			
 		           <a href="/tags/stata">Stata</a>
         	       
@@ -55,12 +55,22 @@
 
 			<div>
 				
+<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
 
+<div id="TOC">
+<ul>
+<li><a href="#reshape-using-dplyr"><span class="toc-section-number">1</span> Reshape using <span>dplyr</span></a><ul>
+<li><a href="#a-journey-from-long-land-to-the-wide-format-town."><span class="toc-section-number">1.1</span> A journey from long-land to the wide format town.</a></li>
+</ul></li>
+<li><a href="#references"><span class="toc-section-number">2</span> References</a></li>
+</ul>
+</div>
 
 <div id="reshape-using-dplyr" class="section level1">
-<h1>Reshape using <a href="https://dplyr.tidyverse.org/">dplyr</a></h1>
+<h1><span class="header-section-number">1</span> Reshape using <a href="https://dplyr.tidyverse.org/">dplyr</a></h1>
 <div id="a-journey-from-long-land-to-the-wide-format-town." class="section level2">
-<h2>A journey from long-land to the wide format town.</h2>
+<h2><span class="header-section-number">1.1</span> A journey from long-land to the wide format town.</h2>
 <p>Here we simulate data in long format.</p>
 <pre class="r"><code># Data in long format
 library(dplyr)
@@ -73,7 +83,7 @@ my.df &lt;- data.frame(id=rep(c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;), 5), 
 <pre><code>## # A tibble: 15 x 5
 ## # Groups:   id [3]
 ##    id     TIME     X     Y fix_per_id
-##    &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;int&gt;
+##    &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;int&gt;
 ##  1 A         1     1    16          6
 ##  2 A         2     4    19          6
 ##  3 A         3     7    22          6
@@ -99,14 +109,14 @@ my.df %&gt;%
 <pre><code>## # A tibble: 3 x 12
 ## # Groups:   id [3]
 ##   id    fix_per_id   X_1   X_2   X_3   X_4   X_5   Y_1   Y_2   Y_3   Y_4   Y_5
-##   &lt;fct&gt;      &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+##   &lt;chr&gt;      &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
 ## 1 A              6     1     4     7    10    13    16    19    22    25    28
 ## 2 B              5     2     5     8    11    14    17    20    23    26    29
 ## 3 C              4     3     6     9    12    15    18    21    24    27    30</code></pre>
 </div>
 </div>
 <div id="references" class="section level1">
-<h1>References</h1>
+<h1><span class="header-section-number">2</span> References</h1>
 <ul>
 <li><a href="https://stackoverflow.com/questions/10589693/convert-data-from-long-format-to-wide-format-with-multiple-measure-columns">Snippet from Reshape equivalence using dplyr</a>.</li>
 </ul>
