@@ -6,10 +6,20 @@
     <description>Recent content in Programming on Álvaro A. Gutiérrez Vargas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stata / R things that I always need to Google </title>
+      <link>/2020/10/19/stata-r-things-that-i-always-need-to-google/</link>
+      <pubDate>Mon, 19 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/10/19/stata-r-things-that-i-always-need-to-google/</guid>
+      <description>Reshape using dplyrA journey from long-land to the wide format town.Here we simulate data in long format.
+# Data in long formatlibrary(dplyr)set.seed(777)my.df &amp;lt;- data.frame(id=rep(c(&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;), 5), TIME=rep(1:5, each=3), X=1:15, Y=16:30) %&amp;gt;%group_by(id) %&amp;gt;%mutate(fix_per_id = rpois(1, lambda = 5))%&amp;gt;%arrange(id) ## # A tibble: 15 x 5## # Groups: id [3]## id TIME X Y fix_per_id## &amp;lt;fct&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt;## 1 A 1 1 16 6## 2 A 2 4 19 6## 3 A 3 7 22 6## 4 A 4 10 25 6## 5 A 5 13 28 6## 6 B 1 2 17 5## 7 B 2 5 20 5## 8 B 3 8 23 5## 9 B 4 11 26 5## 10 B 5 14 29 5## 11 C 1 3 18 4## 12 C 2 6 21 4## 13 C 3 9 24 4## 14 C 4 12 27 4## 15 C 5 15 30 4With the followin code we can put it into wide format.</description>
+    </item>
     
     <item>
       <title>randregret at the UK Stata Meeting - London, 2020!</title>

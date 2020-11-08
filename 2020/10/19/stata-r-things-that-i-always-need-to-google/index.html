@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Stata / R things that I always need to Google </title>
+	
+	
+	<link rel="stylesheet" href="/css/style.css">
+	
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<header>
+	======================================<br>
+	===== <a href="/">Álvaro A. Gutiérrez Vargas</a> =====<br>
+	======================================
+	<div style="float: right;"></div><br>
+	<p>
+	<nav>
+			<a href="/"><b>Hello Friend</b></a>.
+			
+			
+			<a href="/post/"><b>Post</b></a>.
+			
+			<a href="/research/"><b>Research</b></a>.
+			
+			<a href="/teaching/"><b>Teaching</b></a>.
+			
+			<a href="/about/"><b>About</b></a>.
+			
+			<a href="/cv/"><b>CV</b></a>.
+			
+			<a href="/tags/"><b>Tags</b></a>.
+			
+			<a href="/categories/"><b>Categories</b></a>.
+			
+	</nav>
+	</p> 
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Stata / R things that I always need to Google </h1>
+			
+		           <a href="/tags/stata">Stata</a>
+        	       
+		           <a href="/tags/r">R</a>
+        	       
+
+			<div>
+				
+
+
+<div id="reshape-using-dplyr" class="section level1">
+<h1>Reshape using <a href="https://dplyr.tidyverse.org/">dplyr</a></h1>
+<div id="a-journey-from-long-land-to-the-wide-format-town." class="section level2">
+<h2>A journey from long-land to the wide format town.</h2>
+<p>Here we simulate data in long format.</p>
+<pre class="r"><code># Data in long format
+library(dplyr)
+set.seed(777)
+
+my.df &lt;- data.frame(id=rep(c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;), 5), TIME=rep(1:5, each=3), X=1:15, Y=16:30) %&gt;%
+  group_by(id) %&gt;%
+  mutate(fix_per_id = rpois(1, lambda = 5))%&gt;%
+  arrange(id) </code></pre>
+<pre><code>## # A tibble: 15 x 5
+## # Groups:   id [3]
+##    id     TIME     X     Y fix_per_id
+##    &lt;fct&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;int&gt;
+##  1 A         1     1    16          6
+##  2 A         2     4    19          6
+##  3 A         3     7    22          6
+##  4 A         4    10    25          6
+##  5 A         5    13    28          6
+##  6 B         1     2    17          5
+##  7 B         2     5    20          5
+##  8 B         3     8    23          5
+##  9 B         4    11    26          5
+## 10 B         5    14    29          5
+## 11 C         1     3    18          4
+## 12 C         2     6    21          4
+## 13 C         3     9    24          4
+## 14 C         4    12    27          4
+## 15 C         5    15    30          4</code></pre>
+<p>With the followin code we can put it into wide format.</p>
+<pre class="r"><code># Data in wide format
+my.df %&gt;%
+  tidyr::pivot_wider(
+    names_from  = c(TIME), # Can accommodate more variables, if needed.
+    values_from = c(X, Y)
+  )</code></pre>
+<pre><code>## # A tibble: 3 x 12
+## # Groups:   id [3]
+##   id    fix_per_id   X_1   X_2   X_3   X_4   X_5   Y_1   Y_2   Y_3   Y_4   Y_5
+##   &lt;fct&gt;      &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+## 1 A              6     1     4     7    10    13    16    19    22    25    28
+## 2 B              5     2     5     8    11    14    17    20    23    26    29
+## 3 C              4     3     6     9    12    15    18    21    24    27    30</code></pre>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<ul>
+<li><a href="https://stackoverflow.com/questions/10589693/convert-data-from-long-format-to-wide-format-with-multiple-measure-columns">Snippet from Reshape equivalence using dplyr</a>.</li>
+</ul>
+</div>
+
+			</div>
+		</article>
+	</main>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="/"><b>Álvaro A. Gutiérrez Vargas</b></a>.
+	<a href="mailto:alvaro.gutierrezvargas@kuleuven.be"><b>Email</b></a>.
+	<a href="https://github.com/alvarogutyerrez"><b>Github</b></a>.
+	<a href="https://twitter.com/alvarogutyerrez"><b>Twitter</b></a>.
+	<a href="https://www.linkedin.com/in/%C3%A1lvaro-a-guti%C3%A9rrez-vargas-627b20138/"><b>Linkedin</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
