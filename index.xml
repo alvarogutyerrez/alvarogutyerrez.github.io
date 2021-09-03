@@ -164,8 +164,8 @@ S01: Introduccion a LaTeXEnunciado
       
       <guid>/research/</guid>
       <description>Working papers:
-Is the Effect of Personality Traits on Academic Performance Influenced by Type of Tests and Study-Time Constraints?.(With Pablo Tapia and Renato Aguilar)The Big Five Traits and the Home Mortgage Delinquencies (with Pablo Tapia and Jose Luis Ruiz)randregret A command for fitting random regret minimization models using Stata (with Martina Vandebroek and Michel Meulders - Submitted.)Conferences:
-Sechi 2017, Satiago Chile.</description>
+randregret A command for fitting random regret minimization models using Stata (with Martina Vandebroek and Michel Meulders - Submitted.)Conferences:
+Stata Meeting 2021, Seattle, USA Hunting the missing score functions. Slides can be found here and source code here.Stata Meeting 2020, London, UK randregret: A command for fitting random regret minimization models using Stata. Slides can be found here.</description>
     </item>
     
     <item>
@@ -174,8 +174,27 @@ S01: Introduccion a LaTeXEnunciado
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/software/</guid>
-      <description>randregret is a command that allows you to estimate Random Regret Minimization models using Stata. The working paper that goes along with it, including the documentation, can be found here.For citation purposes, please, for now, refer to the following:
-@TechReport{RePEc:boc:usug20:13,author={Álvaro A. Gutiérrez Vargas and Michel Meulders and Martina Vandebroek},title={{randregret: A command for fitting Random Regret Minimization Models}},year=2020,month=Sep,institution={Stata Users Group},type={London Stata Conference 2020},url={https://ideas.</description>
+      <description>randregret is a command that allows you to estimate Random Regret Minimization models using Stata. Forthcoming at The Stata Journal.For citation purposes, please, for now, refer to the following:
+@TechReport{RePEc:boc:usug20:13,author={Álvaro A. Gutiérrez Vargas and Michel Meulders and Martina Vandebroek},title={{randregret: A command for fitting Random Regret Minimization Models}},year=2020,month=Sep,institution={Stata Users Group},type={London Stata Conference 2020},url={https://ideas.repec.org/p/boc/usug20/13.html},number={13},keywords={},doi={},}</description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>/tteaching.knit/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/tteaching.knit/</guid>
+      <description>  randregret is a command that allows you to estimate Random Regret Minimization models using Stata. Forthcoming at The Stata Journal.   For citation purposes, please, for now, refer to the following:
+@TechReport{RePEc:boc:usug20:13,author={Álvaro A. Gutiérrez Vargas and Michel Meulders and Martina Vandebroek},title={{randregret: A command for fitting Random Regret Minimization Models}},year=2020,month=Sep,institution={Stata Users Group},type={London Stata Conference 2020},url={https://ideas.repec.org/p/boc/usug20/13.html},number={13},keywords={},doi={},}</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>/teaching/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/teaching/</guid>
+      <description>[Oto-2019] Introduccion a la Estadistica[Oto-2019] StataLaTeX Combo[Pri-2019] BI para las Finanzas</description>
     </item>
     
     <item>
