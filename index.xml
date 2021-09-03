@@ -179,22 +179,30 @@ S01: Introduccion a LaTeXEnunciado
     </item>
     
     <item>
-      <title></title>
-      <link>/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>About me. a
-I reside in Belgium, working on getting my Ph.D. at the Research Centre for Operations Research and Statistics (ORSTAT) at KU Leuven. I do really like computers, and I survive exclusively out of plants. Away from my keyboard, I enjoy doing bodyweight exercises and trying out new vegan restaurants on my way :P.</description>
-    </item>
-    
-    <item>
       <title>[Pri-2019] BI para las Finanzas</title>
       <link>/teaching/2020-01-01-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/teaching/2020-01-01-python/</guid>
       <description>Descripción del Curso Acá podrás encontrar las ayudantías computacionales del curso Business Intelligence para las Finanzas dictado al programa de Magister en Finanzas en la Universidad de Chile. Las clases van desde tópicos sencillos, como manejo de bases de datos mediante Pandas, hasta desarrollo de algotirmos complejos como Redes Neuronales con Scikit-Learn.Descripción del Curso Acá podrás encontrar las ayudantías computacionales del curso Business Intelligence para las Finanzas dictado al programa de Magister en Finanzas en la Universidad de Chile.</description>
+    </item>
+    
+    <item>
+      <title>null</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>About me. I reside in Belgium, working on getting my Ph.D. at the Research Centre for Operations Research and Statistics (ORSTAT) at KU Leuven. I do really like computers, and I survive exclusively out of plants. Away from my keyboard, I enjoy doing bodyweight exercises and trying out new vegan restaurants on my way :P.</description>
+    </item>
+    
+    <item>
+      <title>summary</title>
+      <link>/_about_to_summary_page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/_about_to_summary_page/</guid>
+      <description>Welcome. Glad you are here. I am Álvaro a third year PhD student at the Research Centre for Operations Research and Statistics (ORSTAT) at KU LeuvenI run this website as a way to collect what I have been learning lately. Most of my posts are difficulties that I encountered on my way and things that I genuinely consider relevant. I document them here primarily as ‘knowledge-bunker’ for my own but feel free to take a look if you want.</description>
     </item>
     
   </channel>

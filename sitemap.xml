@@ -163,15 +163,19 @@
   </url>
   
   <url>
-    <loc>/about/</loc>
-  </url>
-  
-  <url>
     <loc>/teaching/2020-01-01-python/</loc>
   </url>
   
   <url>
+    <loc>/about/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/python/</loc>
+  </url>
+  
+  <url>
+    <loc>/_about_to_summary_page/</loc>
   </url>
   
 </urlset>
