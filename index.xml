@@ -154,9 +154,9 @@ S01: Introduccion a LaTeXEnunciado
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/research/</guid>
-      <description>Working papers:
-randregret A command for fitting random regret minimization models using Stata (with Martina Vandebroek and Michel Meulders - Forthcoming The Stata Journal)Conferences:
-UK Stata Conference 2021, UK: Computing score functions numerically using Mata. [slides are comming]Stata Meeting 2021, Seattle, USA: Hunting the missing score functions. [slides] [code].UK Stata Conference 2020, UK: randregret: A command for fitting random regret minimization models using Stata.</description>
+      <description>Published Articles:
+randregret: A command for fitting random regret minimization models using Stata (with Martina Vandebroek and Michel Meulders) The Stata Journal, 2021Modeling preference heterogeneity using model-based decision trees (with Martina Vandebroek and Michel Meulders). Journal of Choice Modelling, 2023, GitHub repository.Working Papers:
+Fitting mixed logit random regret minimization models using maximum simulated likelihood (with Martina Vandebroek and Ziyue Zu).</description>
     </item>
     
     <item>
@@ -165,8 +165,7 @@ S01: Introduccion a LaTeXEnunciado
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/software/</guid>
-      <description>randregret is a command that allows you to estimate Random Regret Minimization models using Stata. Forthcoming at The Stata Journal.For citation purposes, please, for now, refer to the following:
-@TechReport{RePEc:boc:usug20:13,author={Álvaro A. Gutiérrez Vargas and Michel Meulders and Martina Vandebroek},title={{randregret: A command for fitting Random Regret Minimization Models}},year=2020,month=Sep,institution={Stata Users Group},type={London Stata Conference 2020},url={https://ideas.repec.org/p/boc/usug20/13.html},number={13},keywords={},doi={},}</description>
+      <description>randregret: is a command that allows you to estimate Random Regret Minimization models using Stata. The Stata Journal articlemixrandregret: is a command that allows you to estimate Mixed Random Regret Minimization models using Stata. Arxiv linkmixlmob:: Replication R package for the results of our article called: Modeling preference heterogeneity using model-based decision trees (with Martina Vandebroek and Michel Meulders) publishes in the Journal of Choice Modelling, 2023</description>
     </item>
     
     <item>
